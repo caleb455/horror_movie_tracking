@@ -17,13 +17,13 @@ class Movie:
         self.tags = tags
         self.__version = 1
 
-    def to_dict(self):
+    def to_dict(self): # Changed the function purpose
         dict = {
             'Title': self.title,
             'Release Date': self.release_date,
             'Personal Rating': self.personal_rating,
             'Tags': self.tags
-        }
+        } #Defined as a dictionary ofc
         return dict
 
     def toJson(self):
@@ -65,7 +65,7 @@ def new_movie():
         except Exception as e:
             print("\nError: ", e)
         if new_movie is not None:
-            print(f"Title: {new_movie['Title']}")
+            print(f"Title: {new_movie['Title']}") # Changed how the completed movie is printed
             print(f"Release Date: {new_movie['Release Date']}")
             print(f"Personal Rating: {new_movie['Personal Rating']}")
             tags = str(new_movie['Tags']).strip('[]').replace("'", '')
@@ -114,7 +114,7 @@ options = """Your options for the program are as follows:
 menu = """\nPlease enter your input in the form of a number (1-5) or 6 for options: """
 
 file_name = "horror_movies.json"
-JSONhorror_movies = []
+JSONhorror_movies = [] # Predefined this
 try:
     JSONhorror_movies = load_movies(file_name)
 except:
